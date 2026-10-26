@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+    <header>
+        <div>
+            
+            <h1>{% block h1 %}This Default Header{% endblock %}</h1>
+            <h2>{{ session.get('username','Guest')}}</h2>
+            <nav>
+                <ul>
+                    <li><a href="/">home</a></li>
+                    {% if  session.get('admin') != True %}
+                    <li><a href="/login">login</a></li>
+                    {% else %}
+                    <li><a href="/logout">logout</a></li>
+                    <li><a href="/newpost">new post</a></li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </div>
+        <div id="logo" >
+            <img  src="../static/img/Photo.png" alt=""> 
+        </div>  
+    </header>     
+       
+    
+    <main>
+        <br><br>
+        {% block main %}{% endblock %}
+       
+    </main>
+    <footer>
+        <p>copy right</p>
+    </footer>
+</body>
+</html>
+

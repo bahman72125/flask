@@ -1,0 +1,13 @@
+{% extends 'layout.html' %}
+{% block title %}login page{% endblock %}
+{% block h1 %} login{% endblock %}
+{% block main %}
+    <h1>Login form</h1>
+    <form method="post">
+        <p>{{erorrmsg}}</p>
+        <input type="text" name="username" placeholder="Enter user name...">
+        <input type="password" name="password" placeholder="Enter password...">
+        <input type="submit" value="login">
+    </form>
+{% endblock %}
+

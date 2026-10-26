@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+{% block title %}{% endblock %}
+{% block h1 %}comments of post id{{post._post}}{% endblock %}
+{% block main %}
+    <div class="post">
+        <h2>{{post._id}}-{{post.get('title','No Title')}}</h2>
+        <div class="post-img"><img src="{{url_for('static',filename='upload/'+post.get('image'))}}" alt=""></div>
+        <p>
+            {{post.get('content',' No text')}}
+        </p>
+    </div>
+    
+    {% if session.get('admin') == True %}
+        <form method="post">
+            <input type="text" name="author" id="author" >
+            <textarea type="content" id="content" name="comment" placeholder="comment..."></textarea>
+            <input type="submit" value="Add comment">
+        </form>
+    {% endif %}
+    <hr>
+    {% for com in comments %}
+        <div>
+            <h3>author:{{com.author}} </h3>
+            <p>text:{{com.text}}</p>
+        </div>
+    <hr>
+    {% endfor %}    
+    
+{% endblock %}

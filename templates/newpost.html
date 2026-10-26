@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+{% block title %}new post page{% endblock %}
+{% block h1 %} new post{% endblock %}
+{% block main %}
+
+
+    <h1> New Post</h1>
+    <form method="post" enctype="multipart/form-data">
+        <input type="text" name="title" id="title" placeholder="Title of post...">
+        <textarea id="content" name="content" placeholder="Enter text..."></textarea>
+        <input type="file" name="image" id="image" accept=".jpg,.png,.gif">
+        <input type="submit" value="send post">
+    </form>
+    
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'layout.html' %}
+{% block title %}Delete post page{% endblock %}
+{% block h1 %} Delete post Id ={{post._id}}{% endblock %}
+{% block main %}
+    <h1> Delete Post</h1>
+    <form method="post" enctype="multipart/form-data">
+        <input type="text" name="title" id="title" placeholder="Title of post..." value="{{post.title}}">
+        <input type="content" name="content" id="content" placeholder="content...">
+        <input type="submit" value="send post">
+    </form>
+{% endblock %}
